@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="task.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Task Management System</h1>
+            <p>Create, organize, and prioritize tasks with deadlines</p>
+        </header>
+        
+        <!-- Task Form Section -->
+        <section class="task-form" id="taskForm">
+            <h2 id="formTitle">Add New Task</h2>
+            <form id="addTaskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title *</label>
+                    <input type="text" id="taskTitle" required placeholder="Enter task title">
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <textarea id="taskDescription" placeholder="Enter task description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="taskPriority">Priority</label>
+                    <select id="taskPriority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taskDeadline">Deadline</label>
+                    <input type="datetime-local" id="taskDeadline">
+                </div>
+                <button type="submit" class="btn" id="submitBtn">Add Task</button>
+                <button type="button" class="btn btn-cancel" id="cancelBtn" style="display: none;">Cancel</button>
+            </form>
+        </section>
+        
+        <!-- Task Controls Section -->
+        <section class="task-controls">
+            <div class="control-group">
+                <label for="filterTasks">Filter:</label>
+                <select id="filterTasks">
+                    <option value="all">All Tasks</option>
+                    <option value="active">Active</option>
+                    <option value="completed">Completed</option>
+                    <option value="duesoon">Due Soon</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="sortTasks">Sort By:</label>
+                <select id="sortTasks">
+                    <option value="deadline">Deadline</option>
+                    <option value="priority">Priority</option>
+                    <option value="created">Date Added</option>
+                    <option value="title">Title</option>
+                </select>
+            </div>
+            <div class="notification-bell" id="notificationBell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count" id="notificationCount"></span>
+                <div class="notifications-panel" id="notificationsPanel">
+                    <div id="notificationsList">
+                        <!-- Notifications will be inserted here -->
+                    </div>
+                    <div class="clear-notifications" id="clearNotifications">Clear All</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Task List Section -->
+        <section class="task-list" id="taskList">
+            <!-- Tasks will be inserted here by JavaScript -->
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-tasks"></i>
+                <h3>No tasks found</h3>
+                <p>Add a new task to get started</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="task.js"></script>
+        
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goal Tracker</title>
+  <link rel="stylesheet" href="goal.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Goal Tracker</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" data-type="all">All Goals</div>
+      <div class="tab" data-type="short">Short-term</div>
+      <div class="tab" data-type="long">Long-term</div>
+    </div>
+
+    <div class="add-goal-btn" id="addGoalBtn">
+      <span>+ Add New Goal</span>
+    </div>
+
+    <div id="goalsContainer" class="goals-container">
+      <!-- Goals will be dynamically added here -->
+    </div>
+  </div>
+
+  <!-- Add/Edit Goal Modal -->
+  <div class="modal" id="goalModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Add New Goal</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <form id="goalForm">
+        <input type="hidden" id="goalId">
+        <div class="form-group">
+          <label for="goalTitle">Goal Title</label>
+          <input type="text" id="goalTitle" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="goalDescription">Description</label>
+          <textarea id="goalDescription" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="goalType">Goal Type</label>
+          <select id="goalType" class="form-control" required>
+            <option value="short">Short-term</option>
+            <option value="long">Long-term</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="targetDate">Target Completion Date</label>
+          <input type="date" id="targetDate" class="form-control" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="cancelGoal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveGoal">Save Goal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Milestone Modal -->
+  <div class="modal" id="milestoneModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Add New Milestone</h2>
+        <button class="modal-close" id="closeMilestoneModal">&times;</button>
+      </div>
+      <form id="milestoneForm">
+        <input type="hidden" id="milestoneGoalId">
+        <div class="form-group">
+          <label for="milestoneText">Milestone</label>
+          <input type="text" id="milestoneText" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="milestoneDate">Target Date</label>
+          <input type="date" id="milestoneDate" class="form-control" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="cancelMilestone">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveMilestone">Save Milestone</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script  src="goal.js"></script>>
+   
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalSync - Task & Goal Management</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --success: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --accent: #f72585;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fb;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .highlight {
+            color: var(--primary);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+        
+        .features {
+            background-color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            p {
+                margin: 0 auto 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            html {
+            scroll-behavior: smooth;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Goal<span>Sync</span></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="about.html">About</a>
+                
+            </div>
+            
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero"id="home">
+            <div class="hero-content">
+                <h1>Manage Tasks & Achieve <span class="highlight">Academic Goals</span></h1>
+                <p>StudyStack helps students organize daily tasks and track progress toward long-term goals, all in one place. Stay focused, meet deadlines, and accomplish more.</p>
+                
+            </div>
+            <div class="hero-image">
+                <img src="picture.png" alt="Student using StudyStack app">
+            </div>
+            
+        </section>
+        
+        <section id="features" class="features">
+            <h2>Features Designed for <span class="highlight">Student Success</span></h2>
+            
+            <div class="features-container">
+               
+                <div class="feature-card" onclick="location.href='task-manager.html';" style="cursor: pointer;">
+                    <div class="feature-icon">📝</div>
+                    <h3>Task Management</h3>
+                    <p>Create, organize, and prioritize tasks with deadlines. Get smart reminders to stay on track.</p>
+                </div>
+            
+                
+                <div class="feature-card" onclick="location.href='goal.html';" style="cursor: pointer;">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Goal Setting</h3>
+                    <p>Set short and long-term goals with milestone tracking and visual progress indicators.</p>
+                </div>
+                
+                <div class="feature-card" onclick="location.href='progress.html';" style="cursor: pointer;">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Analytics</h3>
+                    <p>Monitor your productivity with weekly summaries and personalized insights.</p>
+                </div>
+                
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer>
+        <div class="logo">Goal<span>Sync</span></div>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About Us</a>
+            
+            <a href="#">Contact</a>
+        </div>
+        <center>
+        <p>&copy; 2025 GoalSync. All rights reserved.</p>
+        </center>
+    </footer>
+</body>
+</html>
